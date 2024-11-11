@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #153677, #4e085f);
+  padding: 10px;
+
+  .todo {
+    max-width: 540px;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    margin: 100px auto;
+    border-radius: 15px;
+    padding: 40px;
+
+    > h2 {
+      text-align: center;
+    }
+
+    .search {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #edeef0;
+      border-radius: 40px;
+
+      #task {
+        outline: 0;
+        border: unset;
+        flex: 1;
+        background: transparent;
+        padding: 10px;
+      }
+
+      #add {
+        outline: 0;
+        border: unset;
+        border-radius: 40px;
+        background: rgb(155, 98, 212);
+        padding: 16px 50px;
+        color: white;
+      }
+    }
+
+    #list {
+      > li {
+        align-items: center;
+        position: relative;
+        align-items: center;
+        display: flex;
+        list-style: none;
+        cursor: pointer;
+        position: relative;
+        padding: 17px 0 0 35px;
+        > span {
+          position: absolute;
+          right: 15px;
+          top: 12px;
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &:hover {
+            background-color: #55555556;
+          }
+        }
+      }
+
+      > li::before {
+        content: "";
+        position: absolute;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background-image: url(media/unchecked.png);
+        background-size: cover;
+        background-position: center;
+        left: 0px;
+        top: 12px;
+      }
+
+      .checked {
+        color: #555;
+        text-decoration: line-through;
+      }
+
+      .checked::before {
+        background-image: url(media/checked.png);
+      }
+    }
+  }
+}
